@@ -1,0 +1,23 @@
+body {
+    /* background-image: url("../assets/irish-flag.jpg");  */
+    background-color: gray;
+     background-repeat: no-repeat;
+    background-size: cover;
+  
+}
+
+.hide {
+    background-color: red;
+}
+
+.jumbotron {
+    /* background-image: url("../assets/shamrock.jpg");  */
+    /* background-color: green; */
+    background-image: url("../assets/irish-flag.jpg"); 
+    background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#startBtn {
+    background-color: rgb(255, 123, 0);
+}
