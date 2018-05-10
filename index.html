@@ -15,128 +15,188 @@
 </head>
 
 <body>
-    <div class="hide">helle</div>
+
     <div class="container">
         <div class="jumbotron">
             <h1>Irish Trivia!!!</h1>
             <h3 id="time">Timer: </h3>
-            <button id="startBtn" type="button" class="btn btn-primary">Start</button> 
-            <div id="triviaGame"></div>
-</div>
-</div>
+            <button id="startBtn" type="button" class="btn btn-primary">Start</button>
+            <div id="hide">
+                <div id="triviaGame">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quae vel ratione. Consectetur quod numquam
+                    porro culpa tempora maxime et. Voluptates labore, tempore sed nesciunt atque, expedita animi nihil quas
+                    reprehenderit eos eaque facilis natus quo deserunt nam, nostrum beatae repellat voluptatem asperiores!
+                    Quas nihil labore accusantium ut minus temporibus.</div>
+                    <div class="results"></div>
+            </div>
+        </div>
+    </div>
 
 
-            <script>
+    <script>
 
-                $(document).ready()
-                var userPick;
+        $(document).ready()
+        var triviaGameContainer = document.getElementById("triviaGame");
+        var resultsContainer = document.getElementById('results');
+        
+        var userPick;
 
-                var correctAnswer = 0;
+        var correctAnswer = 0;
 
-                var incorrectAnswer = 0;
+        var incorrectAnswer = 0;
 
-                var unAnswer = 0;
+        var unAnswer = 0;
 
-                var question = 0;
+        var question = 0;
 
-                var images;
+        var images;
 
-                var count = 30;
+        var count = 30;
 
-                var myQuestions = [
-                    {
-                        question: "On what day of the week was it regarded as being unlucky to cut your fingernails?",
-                        answers: {
-                            a: "Sunday",
-                            b: "Monday",
-                            c: "Wednesday",
-                            d: "None of These"
-                        },
-                        correctAnswer: "a"
-                    },
+        var myQuestions = [
+            {
+                question: "On what day of the week was it regarded as being unlucky to cut your fingernails?",
+                answers: {
+                    a: "Sunday",
+                    b: "Monday",
+                    c: "Wednesday",
+                    d: "None of These"
+                },
+                correctAnswer: "a"
+            },
 
-                    {
-                        question: "Allegedly what will happen if you kiss the Blarney Stone?",
-                        answers: {
-                            a: "You will become Invincible",
-                            b: "You will get really good at doing your taxes",
-                            c: "You will get the gift of the gab",
-                            d: "You will stay young forever"
-                        },
-                        correctAnswer: 'c'
-                    },
+            {
+                question: "Allegedly what will happen if you kiss the Blarney Stone?",
+                answers: {
+                    a: "You will become Invincible",
+                    b: "You will get really good at doing your taxes",
+                    c: "You will get the gift of the gab",
+                    d: "You will stay young forever"
+                },
+                correctAnswer: 'c'
+            },
 
-                    {
-                        question: "During which years did the Irish Potato Famine take place?",
-                        answers: {
-                            a: "1789 - 99",
-                            b: "1845 - 49",
-                            c: "2000 - 2012",
-                            d: "1456 - 89"
-                        },
-                        correctAnswer: 'b'
-                    },
+            {
+                question: "During which years did the Irish Potato Famine take place?",
+                answers: {
+                    a: "1789 - 99",
+                    b: "1845 - 49",
+                    c: "2000 - 2012",
+                    d: "1456 - 89"
+                },
+                correctAnswer: 'b'
+            },
 
-                    {
-                        question: "What does the IRA stand for?",
-                        answers: {
-                            a: "Irritating Red armoury",
-                            b: "Ireland Rules Assholes",
-                            c: "Irish Revolution Army",
-                            d: "Irish Rebublican Army"
-                        },
-                        correctAnswer: "d"
-                    },
-                   
-                    {
+            {
+                question: "What does the IRA stand for?",
+                answers: {
+                    a: "Irritating Red armoury",
+                    b: "Ireland Rules Assholes",
+                    c: "Irish Revolution Army",
+                    d: "Irish Rebublican Army"
+                },
+                correctAnswer: "d"
+            },
 
-                        question: "What country sells the most amount of Guinness",
-                        answers: {
-                            a: "Nigeria",
-                            b: "Canada",
-                            c: "Ireland",
-                            d: "Australia"
-                        },
-                        correctAnswer: "a"
-                    },
-                    {
+            {
 
-                        question: "How many pints of Guinness are produced in Ireland daily?",
-                        answers: {
-                            a: "3 Million",
-                            b: "5 Million",
-                            c: "10 Million",
-                            d: "7 Million"
-                        },
-                        correctAnswer: 'c'
-                    }
-                ];
+                question: "What country sells the most amount of Guinness",
+                answers: {
+                    a: "Nigeria",
+                    b: "Canada",
+                    c: "Ireland",
+                    d: "Australia"
+                },
+                correctAnswer: "a"
+            },
+            {
+
+                question: "How many pints of Guinness are produced in Ireland daily?",
+                answers: {
+                    a: "3 Million",
+                    b: "5 Million",
+                    c: "10 Million",
+                    d: "7 Million"
+                },
+                correctAnswer: 'c'
+            }
+        ];
+
+         $("#triviaGame").append(myQuestions);
+
+        // function showQuestions(questions, quizContainer) {
+        //         // we'll need a place to store the output and the answer choices
+        //         var output = [];
+        //         var answers;
+
+        //         // for each question...
+        //         for (var i = 0; i < questions.length; i++) {
+
+        //             // first reset the list of answers
+        //             answers = [];
+
+        //             // for each available answer to this question...
+        //             for (letter in questions[i].answers) {
+
+        //                 // ...add an html radio button
+        //                 answers.push(
+        //                     '<label>'
+        //                     + '<input type="radio" name="question' + i + '" value="' + letter + '">'
+        //                     + letter + ': '
+        //                     + questions[i].answers[letter]
+        //                     + '</label>'
+        //                 );
+        //             }
+
+        //             // add this question and its answers to the output
+        //             output.push(
+        //                 '<div class="question">' + questions[i].question + '</div>'
+        //                 + '<div class="answers">' + answers.join('') + '</div>'
+        //             );
+        //         }
+
+        //         // finally combine our output list into one string of html and put it on the page
+        //         quizContainer.innerHTML = output.join('');
+        //     }
+
+var $startButton = $("#startBtn");
+var $triviaGame = $("#triviaGame");
+var $hide = $("#hide")
+
+    $("#hide").hide("$triviaGame");
+
+$startButton.on("click", () => {
+    $hide.fadeIn();
+})
 
 
-                function startTimer(duration, display) {
-                    var timer = duration, minutes, seconds;
-                    setInterval(function () {
-                        minutes = parseInt(timer / 60, 10);
-                        seconds = parseInt(timer % 60, 10);
+      
 
-                        minutes = minutes < 10 ? "0" + minutes : minutes;
-                        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-                        display.text("Timer: " + minutes + ":" + seconds);
 
-                        if (--timer < 0) {
-                            timer = duration;
-                        }
-                    }, 1000);
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.text("Timer: " + minutes + ":" + seconds);
+
+                if (--timer < 0) {
+                    timer = duration;
                 }
+            }, 1000);
+        }
 
-                jQuery(function ($) {
-                    var twoMinutes = 60 * 2,
-                        display = $("#time");
-                    startTimer(twoMinutes, display);
-                });
+        jQuery(function ($) {
+            var twoMinutes = 60 * 2,
+                display = $("#time");
+            startTimer(twoMinutes, display);
+        });
 
-            </script>
+    </script>
 </body>
 
 </html>

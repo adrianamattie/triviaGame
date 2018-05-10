@@ -21,3 +21,7 @@ body {
 #startBtn {
     background-color: rgb(255, 123, 0);
 }
+
+.triviaGame {
+    display: none;
+}
