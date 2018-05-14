@@ -22,22 +22,31 @@
             <h3 id="time">Timer: </h3>
             <button id="startBtn" type="button" class="btn btn-primary">Start</button>
             <div id="hide">
-                <div id="triviaGame">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quae vel ratione. Consectetur quod numquam
-                    porro culpa tempora maxime et. Voluptates labore, tempore sed nesciunt atque, expedita animi nihil quas
-                    reprehenderit eos eaque facilis natus quo deserunt nam, nostrum beatae repellat voluptatem asperiores!
-                    Quas nihil labore accusantium ut minus temporibus.</div>
-                    <div class="results"></div>
+                <div id="triviaGame"></div>
+                <div class="question0">
+                 
+                        <div class="answerA"></div>
+                        <div class="answerB"></div>
+                        <div class="answerC"></div>
+                        <div class="answerD"></div>
+                   
+                </div>
+                <div class="question1"></div>
+                <div class="question2"></div>
+                <div class="question3"></div>
+                <div class="question4"></div>
+                <div class="question5"></div>
+                <div class="results"></div>
             </div>
         </div>
     </div>
 
 
     <script>
-
         $(document).ready()
         var triviaGameContainer = document.getElementById("triviaGame");
         var resultsContainer = document.getElementById('results');
-        
+
         var userPick;
 
         var correctAnswer = 0;
@@ -52,8 +61,12 @@
 
         var count = 30;
 
-        var myQuestions = [
-            {
+        var $answerA = $(".answerA");
+        var $answerB = $(".answerB");
+        var $answerC = $(".answerC");
+        var $answerD = $(".answerD");
+
+        var myQuestions = [{
                 question: "On what day of the week was it regarded as being unlucky to cut your fingernails?",
                 answers: {
                     a: "Sunday",
@@ -121,81 +134,91 @@
             }
         ];
 
-         $("#triviaGame").append(myQuestions);
 
-        // function showQuestions(questions, quizContainer) {
-        //         // we'll need a place to store the output and the answer choices
-        //         var output = [];
-        //         var answers;
 
-        //         // for each question...
-        //         for (var i = 0; i < questions.length; i++) {
+        // for (i = 0; i < myQuestions[0].answers.length;)
+        //     console.log(myQuestions[0].answers.length); {
+        //         var s = $("<input>");
+        //         s.addClass("selection ");
+        //         s.attr("type", "radio");
+        //         $(".selection" + i).append(s);
+        //     };
 
-        //             // first reset the list of answers
-        //             answers = [];
 
-        //             // for each available answer to this question...
-        //             for (letter in questions[i].answers) {
+        var answerInputA = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form1");
+        $answerA.append(answerInputA);
 
-        //                 // ...add an html radio button
-        //                 answers.push(
-        //                     '<label>'
-        //                     + '<input type="radio" name="question' + i + '" value="' + letter + '">'
-        //                     + letter + ': '
-        //                     + questions[i].answers[letter]
-        //                     + '</label>'
-        //                 );
-        //             }
+ var answerInputB = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form1");
+        $answerB.append(answerInputB);
 
-        //             // add this question and its answers to the output
-        //             output.push(
-        //                 '<div class="question">' + questions[i].question + '</div>'
-        //                 + '<div class="answers">' + answers.join('') + '</div>'
-        //             );
+        var answerInputC = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form1");
+        $answerC.append(answerInputC);
+ var answerInputD = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form1");
+        $answerD.append(answerInputD);
+
+
+
+        $(".question0").prepend(myQuestions[0].question);
+        $(".answerA").append(myQuestions[0].answers.a);
+        $(".answerB").append(myQuestions[0].answers.b);
+        $(".answerC").append(myQuestions[0].answers.c);
+        $(".answerD").append(myQuestions[0].answers.d);
+
+        $(".question1").append(myQuestions[1].question);
+        $(".question2").append(myQuestions[2].question);
+        $(".question3").append(myQuestions[3].question);
+        $(".question4").append(myQuestions[4].question);
+        $(".question5").append(myQuestions[5].question);
+
+
+        var $startButton = $("#startBtn");
+        var $triviaGame = $("#triviaGame");
+        var $hide = $("#hide")
+
+        $("#hide").hide("$triviaGame");
+
+        $startButton.on("click", () => {
+            $hide.fadeIn();
+            //{ holder.push(options[i]); }
+        })
+
+
+
+
+        var countDown = function () {
+            // decrement timerNumber 
+            timerNumber--;
+            // write timer to html timerDiv 
+            $("#time").html("<h2> Time Remaining: " + timerNumber + '</h2>');
+            // when timer reaches 0 
+            if (timerNumber == 0) {
+                gameOver();
+            }
+        };
+        // 
+        //         function startTimer(duration, display) {
+        //             var timer = duration,
+        //                 minutes, seconds;
+        //             setInterval(function () {
+        //                 minutes = parseInt(timer / 60, 10);
+        //                 seconds = parseInt(timer % 60, 10);
+
+        //                 minutes = minutes < 10 ? "0" + minutes : minutes;
+        //                 seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        //                 display.text("Timer: " + minutes + ":" + seconds);
+
+        //                 if (--timer < 0) {
+        //                     timer = duration;
+        //                 }
+        //             }, 1000);
         //         }
 
-        //         // finally combine our output list into one string of html and put it on the page
-        //         quizContainer.innerHTML = output.join('');
-        //     }
-
-var $startButton = $("#startBtn");
-var $triviaGame = $("#triviaGame");
-var $hide = $("#hide")
-
-    $("#hide").hide("$triviaGame");
-
-$startButton.on("click", () => {
-    $hide.fadeIn();
-})
-
-
-      
-
-
-
-        function startTimer(duration, display) {
-            var timer = duration, minutes, seconds;
-            setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
-
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                display.text("Timer: " + minutes + ":" + seconds);
-
-                if (--timer < 0) {
-                    timer = duration;
-                }
-            }, 1000);
-        }
-
-        jQuery(function ($) {
-            var twoMinutes = 60 * 2,
-                display = $("#time");
-            startTimer(twoMinutes, display);
-        });
-
+        //         jQuery(function ($) {
+        //             var twoMinutes = 60 * 2,
+        //                 display = $("#time");
+        //             startTimer(twoMinutes, display);
+        //         });
     </script>
 </body>
 
