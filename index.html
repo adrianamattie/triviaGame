@@ -24,18 +24,43 @@
             <div id="hide">
                 <div id="triviaGame"></div>
                 <div class="question0">
-                 
-                        <div class="answerA"></div>
-                        <div class="answerB"></div>
-                        <div class="answerC"></div>
-                        <div class="answerD"></div>
-                   
+
+                    <div class="answer0A"></div>
+                    <div class="answer0B"></div>
+                    <div class="answer0C"></div>
+                    <div class="answer0D"></div>
+
                 </div>
-                <div class="question1"></div>
-                <div class="question2"></div>
-                <div class="question3"></div>
-                <div class="question4"></div>
-                <div class="question5"></div>
+                <div class="question1">
+                    <div class="answer1A"></div>
+                    <div class="answer1B"></div>
+                    <div class="answer1C"></div>
+                    <div class="answer1D"></div>
+                </div>
+                <div class="question2">
+                    <div class="answer2A"></div>
+                    <div class="answer2B"></div>
+                    <div class="answer2C"></div>
+                    <div class="answer2D"></div>
+                </div>
+                <div class="question3">
+                    <div class="answer3A"></div>
+                    <div class="answer3B"></div>
+                    <div class="answer3C"></div>
+                    <div class="answer3D"></div>
+                </div>
+                <div class="question4">
+                    <div class="answer4A"></div>
+                    <div class="answer4B"></div>
+                    <div class="answer4C"></div>
+                    <div class="answer4D"></div>
+                </div>
+                <div class="question5">
+                    <div class="answer5A"></div>
+                    <div class="answer5B"></div>
+                    <div class="answer5C"></div>
+                    <div class="answer5D"></div>
+                </div>
                 <div class="results"></div>
             </div>
         </div>
@@ -61,10 +86,35 @@
 
         var count = 30;
 
-        var $answerA = $(".answerA");
-        var $answerB = $(".answerB");
-        var $answerC = $(".answerC");
-        var $answerD = $(".answerD");
+        var $answerA = $(".answer0A");
+        var $answerB = $(".answer0B");
+        var $answerC = $(".answer0C");
+        var $answerD = $(".answer0D");
+
+        var $answer1A = $(".answer1A");
+        var $answer1B = $(".answer1B");
+        var $answer1C = $(".answer1C");
+        var $answer1D = $(".answer1D");
+
+        var $answer2A = $(".answer2A");
+        var $answer2B = $(".answer2B");
+        var $answer2C = $(".answer2C");
+        var $answer2D = $(".answer2D");
+
+        var $answer3A = $(".answer3A");
+        var $answer3B = $(".answer3B");
+        var $answer3C = $(".answer3C");
+        var $answer3D = $(".answer3D");
+
+        var $answer4A = $(".answer4A");
+        var $answer4B = $(".answer4B");
+        var $answer4C = $(".answer4C");
+        var $answer4D = $(".answer4D");
+
+        var $answer5A = $(".answer5A");
+        var $answer5B = $(".answer5B");
+        var $answer5C = $(".answer5C");
+        var $answer5D = $(".answer5D");
 
         var myQuestions = [{
                 question: "On what day of the week was it regarded as being unlucky to cut your fingernails?",
@@ -145,30 +195,92 @@
         //     };
 
 
-        var answerInputA = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form1");
+        var answerInputA = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form4");
         $answerA.append(answerInputA);
 
- var answerInputB = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form1");
+        var answerInputB = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form4");
         $answerB.append(answerInputB);
 
-        var answerInputC = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form1");
+        var answerInputC = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form4");
         $answerC.append(answerInputC);
- var answerInputD = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form1");
+        var answerInputD = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form4");
         $answerD.append(answerInputD);
 
 
 
         $(".question0").prepend(myQuestions[0].question);
-        $(".answerA").append(myQuestions[0].answers.a);
-        $(".answerB").append(myQuestions[0].answers.b);
-        $(".answerC").append(myQuestions[0].answers.c);
-        $(".answerD").append(myQuestions[0].answers.d);
+        $(".answer0A").append(myQuestions[0].answers.a);
+        $(".answer0B").append(myQuestions[0].answers.b);
+        $(".answer0C").append(myQuestions[0].answers.c);
+        $(".answer0D").append(myQuestions[0].answers.d);
 
-        $(".question1").append(myQuestions[1].question);
-        $(".question2").append(myQuestions[2].question);
-        $(".question3").append(myQuestions[3].question);
-        $(".question4").append(myQuestions[4].question);
-        $(".question5").append(myQuestions[5].question);
+        var answerInputA = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form1");
+        $answer1A.append(answerInputA);
+        var answerInputB = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form1");
+        $answer1B.append(answerInputB);
+        var answerInputC = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form1");
+        $answer1C.append(answerInputC);
+        var answerInputD = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form1");
+        $answer1D.append(answerInputD);
+
+        $(".question1").prepend(myQuestions[1].question);
+        $answer1A.append(myQuestions[1].answers.a);
+        $answer1B.append(myQuestions[1].answers.b);
+        $answer1C.append(myQuestions[1].answers.c);
+        $answer1D.append(myQuestions[1].answers.d);
+
+
+        var answerInputA = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form2");
+        $answer2A.append(answerInputA);
+        var answerInputB = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form2");
+        $answer2B.append(answerInputB);
+        var answerInputC = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form2");
+        $answer2C.append(answerInputC);
+        var answerInputD = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form2");
+        $answer2D.append(answerInputD);
+
+        $(".question2").prepend(myQuestions[2].question);
+        $answer2A.append(myQuestions[2].answers.a);
+        $answer2B.append(myQuestions[2].answers.b);
+        $answer2C.append(myQuestions[2].answers.c);
+        $answer2D.append(myQuestions[2].answers.d);
+
+        var answerInputA = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form3");
+        $answer3A.append(answerInputA);
+        var answerInputB = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form3");
+        $answer3B.append(answerInputB);
+        var answerInputC = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form3");
+        $answer3C.append(answerInputC);
+        var answerInputD = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form3");
+        $answer3D.append(answerInputD);
+
+        $(".question3").prepend(myQuestions[3].question);
+        $answer3A.append(myQuestions[3].answers.a);
+        $answer3B.append(myQuestions[3].answers.b);
+        $answer3C.append(myQuestions[3].answers.c);
+        $answer3D.append(myQuestions[3].answers.d);
+
+ var answerInputA = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form4"); $answer4A.append(answerInputA); 
+ var answerInputB =$("<input>").addClass("selection").attr("type", "radio").attr("name", "form4"); $answer4B.append(answerInputB); 
+var answerInputC =$("<input>").addClass("selection").attr("type", "radio").attr("name", "form4"); $answer4C.append(answerInputC); 
+var answerInputD =$("<input>").addClass("selection").attr("type", "radio").attr("name", "form4"); $answer4D.append(answerInputD);
+
+        $(".question4").prepend(myQuestions[4].question);
+        $answer4A.append(myQuestions[4].answers.a);
+        $answer4B.append(myQuestions[4].answers.b);
+        $answer4C.append(myQuestions[4].answers.c);
+        $answer4D.append(myQuestions[4].answers.d);
+
+ var answerInputA = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form5"); $answer5A.append(answerInputA); 
+ var answerInputB =$("<input>").addClass("selection").attr("type", "radio").attr("name", "form5"); $answer5B.append(answerInputB); 
+ var answerInputC =$("<input>").addClass("selection").attr("type", "radio").attr("name", "form5"); $answer5C.append(answerInputC); 
+ var answerInputD =$("<input>").addClass("selection").attr("type", "radio").attr("name", "form5"); $answer5D.append(answerInputD);
+
+        $(".question5").prepend(myQuestions[5].question);
+        $answer5A.append(myQuestions[5].answers.a);
+        $answer5B.append(myQuestions[5].answers.b);
+        $answer5C.append(myQuestions[5].answers.c);
+        $answer5D.append(myQuestions[5].answers.d);
 
 
         var $startButton = $("#startBtn");
