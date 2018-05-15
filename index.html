@@ -128,6 +128,10 @@
             countDown = setInterval(timerCount, 1000);
         }
 
+        function stop() {
+            clearInterval(countDown);
+        }
+
         function timerCount() {
             timer--;
             $("#time").html("<h2>" + timer + "</h2>");
@@ -137,9 +141,7 @@
             }
         }
 
-        function stop() {
-            clearInterval(countDown);
-        }
+
 
         var myQuestions = [{
                 question: "On what day of the week was it regarded as being unlucky to cut your fingernails?",
