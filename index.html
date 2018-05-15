@@ -222,18 +222,18 @@
         //     };
 
 
-        var answerInputA = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form4").attr("value",
+        var answerInputA = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form0").attr("value",
             true);
         $answerA.append(answerInputA);
 
-        var answerInputB = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form4").attr("value",
+        var answerInputB = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form0").attr("value",
             false);
         $answerB.append(answerInputB);
 
-        var answerInputC = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form4").attr("value",
+        var answerInputC = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form0").attr("value",
             false);
         $answerC.append(answerInputC);
-        var answerInputD = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form4").attr("value",
+        var answerInputD = $("<input>").addClass("selection").attr("type", "radio").attr("name", "form0").attr("value",
             false);
         $answerD.append(answerInputD);
 
@@ -354,6 +354,7 @@
             })
         }
 
+
         //question 0 
 
         //  userAnswer = ($('.selection.(input[value=true]:checked'));
@@ -362,9 +363,13 @@
         //             alert("Correct Answer");
         //             console.log('true')
         //         }
-        //  if($('.selection[value=true]').is(':checked')) {
-        //             alert("Correct Answer");
-        //             console.log('true')
+         if($('input[name=form0]:checked').val() === true) {
+                    alert("Correct Answer");
+                    console.log('true');
+ 
+ }
+ console.log($('input[name=form0]:checked').val());
+
         //         } else if ($answerB.checked) {
         //             alert("Wrong Answer")
         //         } else if ($answerC.checked) {
